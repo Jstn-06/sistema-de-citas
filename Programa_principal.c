@@ -10,7 +10,6 @@ void menuPaciente(SesionActual sesion);
 void menuMedico(SesionActual sesion);
 void menuAdmin(SesionActual sesion);
 
-// Función local para que el administrador pueda eliminar citas por ID
 void gestionarCitasAdmin() {
 	int idBorrar;
 	system("cls");
@@ -67,7 +66,7 @@ void menuPaciente(SesionActual sesion) {
 			verMisCitasPaciente(sesion.id_usuario); 
 			break;
 		case 3:
-			// Mostramos primero las citas para que el usuario vea el ID
+			
 			verMisCitasPaciente(sesion.id_usuario);
 			printf("\nIngrese ID de la cita a cancelar (0 para volver): ");
 			if(scanf("%d", &idCancelar)!=1){ while(getchar()!='\n'); idCancelar=0; }
@@ -105,8 +104,8 @@ void menuAdmin(SesionActual sesion) {
 		case 1: registrarMedico(); break;
 		case 2: listarMedicos(); break;
 		case 3: listarPacientes(); break;
-		case 4: registrar_paciente(); break; // El admin ahora puede registrar pacientes
-		case 5: gestionarCitasAdmin(); break; // El admin puede cancelar cualquier cita por ID
+		case 4: registrar_paciente(); break; 
+		case 5: gestionarCitasAdmin(); break; 
 		}
 	} while(op != 6);
 }
